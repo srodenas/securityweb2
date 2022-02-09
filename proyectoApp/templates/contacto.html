@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titulo %} Contacto PSP 2021/2022 {% endblock %}
+{% block tituloprincipal %} Contactar {% endblock %}
+{% block subtitulo %} Contactar a PSP 2021 {% endblock %}
+{% block cuerpo %}
+  <h1>Parte principal de la página: Títulooo</h1>
+  <h2>Subtítulo de la parte principall.</h2>
+  <article>
+    <form action="" method="post">
+
+      {% csrf_token %}
+      
+        <label for="nombre">Nombre: </label>
+        <input id="team_name" type="text" name="nombreTxt" value=""><br>
+        <label for="nombre">Apellidos: </label>
+        <input id="team_name" type="text" name="apellidosTxt" value=""><br>
+        <label for="nombre">Email: </label>
+        <input id="team_name" type="text" name="emailTxt" value=""><br>
+        <input type="submit" value="Enviar">
+    </form>
+  </article>
+{% endblock %}
+
+
