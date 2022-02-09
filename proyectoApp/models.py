@@ -42,3 +42,15 @@ class Cliente(ModeloBase):
     #Cómo queremos ver los datos de las categorías.
     def __str__(self):
         return self.nombre
+
+
+class Articulo(ModeloBase):
+    descripcion = models.CharField('Descripcion del artículo', max_length=200)
+    precio = models.CharField('Precio del artículo', max_length= 5)
+    
+    class Meta:
+        verbose_name = 'Artículo'
+        verbose_name_plural = 'Artículos'
+        
+    def __str__(self):
+        return self.descripcion

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .logica import Articulo
+from .consultasORM import listaIdArticulo, consultaArticulo
 
 # Create your views here.
 
@@ -42,3 +43,24 @@ def vistaContacto(request):
 
 def vistaAcercade(request):
     return render(request, "acercade.html",{})
+
+
+def inicioClientes(request):
+    listaCliente = listaIdArticulo();  #lista de clientes
+    id1 = random.choice(listaCliente)
+    listaCliente.remove(id1)
+    
+    id2 = random.choice(listaCliente)
+    listaCliente.remove(id2)
+    
+    id3 = random.choice(listaCliente)
+    listaCliente.remove(id3)
+    
+    listaClientes = [consultaCliente(id1), consultaCliente(id2), consultaCliente(id3)]
+    
+    contexto = {
+        'lista' : listaClientes
+    }
+    return render(request, 'clientes.html', contexto)
+    
+    
