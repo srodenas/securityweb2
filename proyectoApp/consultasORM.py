@@ -1,9 +1,9 @@
 from .models import *
 
-def listaIdArticulo():
+def listaIdArticulos():
     misArticulos = Articulo.objects.filter(
-        estado = True,
-        publicado = True
+        estado = True
+        
     
     ).values_list('id', flat = True)
     
@@ -11,16 +11,16 @@ def listaIdArticulo():
     return listaArticulos
 
 
-def consultaArticulo(id1):
+def consultaArticulos(id1):
     return Articulo.objects.get(id = id1)
 
 
 
 
-def listaIdCliente():
+def listaIdClientes():
     misClientes = Cliente.objects.filter(
-        estado = True,
-        publicado = True
+        estado = True
+        
     
     ).values_list('id', flat = True)
     
